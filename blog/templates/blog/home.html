@@ -62,4 +62,34 @@
     padding: 0.5rem 1rem;
   }
 </style>
+
+<br /><br />
+
+<div class="container custom-container" style="max-width: 1350px">
+  {% for post in posts %}
+  <article class="media content-section">
+    <div
+      class="media-body"
+      style="border: 1px solid black; padding: 23px; margin-bottom: 10px"
+    >
+      <div class="article-metadata">
+        <h1
+          class="text-uppercase"
+          style="text-align: left; float: left; color: black"
+        >
+          {{ post.author }}
+        </h1>
+        <h5 style="text-align: right; float: right">
+          {{ post.date_posted|date:"F d,Y"}}
+        </h5>
+        <hr style="clear: both" />
+      </div>
+      <h3>{{ post.title }}</h3>
+      <p class="article-content">{{ post.content }}</p>
+      <br /><br />
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
 {% endblock %}
