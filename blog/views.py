@@ -8,5 +8,9 @@ def login(request):
   return render(request, 'blog/login.html')
 
 def signup(request):
-  return render(request,'blog/signup.html')      
+  return render(request,'blog/signup.html')   
+
+def home(request):
+  return render(request, 'blog/home.html')
+
 # Create your views here.

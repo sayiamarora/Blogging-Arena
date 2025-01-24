@@ -5,4 +5,5 @@ urlpatterns = [
     # path('', views.login),
     path('login/',views.login),
     path('',views.signup),
+    path('home/', views.home),
 ]
