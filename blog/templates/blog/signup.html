@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %} {% block content %} {% load static %}
+{% extends 'blog/base.html' %} {% block content %}
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -10,6 +10,9 @@
             <h2>Create An Account</h2>
           </div>
           <br />
+          {% if error %}
+          <div class="alert alert-danger" role="alert">{{ error }}</div>
+          {% endif %}
           <div class="mb-3">
             <input
               type="text"
@@ -17,6 +20,7 @@
               id="Username"
               name="usname"
               placeholder="Your Name"
+              required
             />
           </div>
           <div class="mb-3">
@@ -26,6 +30,7 @@
               id="email"
               name="uemail"
               placeholder="Your Email"
+              required
             />
           </div>
           <div class="mb-3">
@@ -34,7 +39,8 @@
               class="form-control"
               id="password"
               name="upassword"
-              placeholder="password"
+              placeholder="Password"
+              required
             />
           </div>
           <br />
@@ -44,7 +50,7 @@
             </button>
           </div>
           <div id="emailHelp" class="form-text text-center mb-5 text-dark">
-            Already have an account ?
+            Already have an account?
             <a href="/login" class="text-dark fw-bold">Login Here</a>
           </div>
         </form>
